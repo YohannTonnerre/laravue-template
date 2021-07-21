@@ -13,8 +13,8 @@
             <router-link to="/">
                 <p>Home</p>
             </router-link>
-            <router-link to="/test">
-                <p>test</p>
+            <router-link to="/register">
+                <p>register</p>
             </router-link>
                 
 

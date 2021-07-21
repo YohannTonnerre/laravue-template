@@ -2,7 +2,8 @@
 import VueRouter from 'vue-router';
 import Vue from 'vue'; 
 import Home from "../components/Home.vue";
-import Test from "../components/Test.vue";
+import Register from "../components/Auth/Register.vue";
+import Dashboard from "../components/Dashboard.vue";
 
 Vue.use(VueRouter);
 
@@ -13,9 +14,14 @@ Vue.use(VueRouter);
         name: 'Home'
     },
     {
-        path: '/test',
-        component: Test,
-        name: 'Test'
+        path: '/register',
+        component: Register,
+        name: 'Register'
+    },
+    {
+        path: '/dashboard',
+        component: Dashboard,
+        name: 'Dashboard'
     },
     
 ]
