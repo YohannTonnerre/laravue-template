@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import Vue from 'vue'; 
 import Home from "../components/Home.vue";
 import Register from "../components/Auth/Register.vue";
+import Login from "../components/Auth/Login.vue";
 import Dashboard from "../components/Dashboard.vue";
 
 Vue.use(VueRouter);
@@ -19,9 +20,21 @@ Vue.use(VueRouter);
         name: 'Register'
     },
     {
-        path: '/dashboard',
+        path: '/login',
+        component: Login,
+        name: 'Login'
+    },
+    {
+        path:'/dashboard',
         component: Dashboard,
-        name: 'Dashboard'
+        name: 'Dashboard',
+        beforeEnter: (to, from, next) => {
+            axios.get('/api/authentificated').then(()=>{
+                next()
+            }).catch(()=>{
+                return next({name: 'Login'})
+            })
+        }
     },
     
 ]

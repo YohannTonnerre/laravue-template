@@ -16,6 +16,9 @@
             <router-link to="/register">
                 <p>register</p>
             </router-link>
+            <router-link to="/login">
+                <p>login</p>
+            </router-link>
                 
 
             
