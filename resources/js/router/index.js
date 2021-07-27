@@ -1,12 +1,9 @@
 
-import VueRouter from 'vue-router';
-import Vue from 'vue'; 
+import { createWebHistory, createRouter } from "vue-router";
 import Home from "../components/Home.vue";
 import Register from "../components/Auth/Register.vue";
 import Login from "../components/Auth/Login.vue";
 import Dashboard from "../components/Dashboard.vue";
-
-Vue.use(VueRouter);
 
  const routes = [
     {
@@ -40,8 +37,9 @@ Vue.use(VueRouter);
 ]
 
 
-const router = new VueRouter({
-    routes
-})
+const router = createRouter({
+    history: createWebHistory(),
+    routes,
+  });
   
   export default router;
